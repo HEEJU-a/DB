@@ -10,4 +10,4 @@ SELECT * FROM t_board;
 INSERT INTO t_board
 (title, ctnt)
 VALUES
-(' 안녕','하하');
+(' 안녕','하하'); 
