@@ -1,3 +1,5 @@
+create database apartment default character set utf8 collate UTF8_GENERAL_CI;
+
 CREATE TABLE location_code(
 	cd INT UNSIGNED PRIMARY KEY,
 	local_nm nvarchar(5) NOT NULL,
@@ -34,4 +36,12 @@ FOREIGN KEY (location_cd) REFERENCES location_code(cd)
 );
 DROP TABLE apartment_info;
 SELECT * FROM apartment_info;
+
+SELECT A.*
+FROM apartment_info A
+INNER JOIN location_code B
+ON A.location_cd = B.cd
+WHERE A.deal_year = '2020'
+AND A.deal_month = '8'
+AND B.external_cd = '27110';
 
